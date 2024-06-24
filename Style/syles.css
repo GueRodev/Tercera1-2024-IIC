@@ -1,0 +1,109 @@
+/* Aplica un reinicio básico a todos los elementos, eliminando márgenes y rellenos predeterminados y estableciendo el modelo de caja en border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Establece la fuente predeterminada del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Define el estilo del encabezado */
+header {
+    display: flex; /* Utiliza Flexbox para alinear elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    gap: 500px; /* Añade espacio entre el logo y los enlaces */
+}
+
+/* Establece la altura de la imagen del logo */
+.logo img {
+    height: 200px; /* Ajusta la altura del logo para que sea más grande */
+}
+
+/* Estilo para la lista de navegación */
+nav ul {
+    display: flex; /* Utiliza Flexbox para alinear los elementos de la lista horizontalmente */
+    list-style: none; /* Elimina los puntos de viñeta de la lista */
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    gap: 20px; /* Añade espacio entre los enlaces */
+}
+
+/* Estilo para cada elemento de la lista de navegación */
+nav ul li {
+    margin: 0;
+}
+
+/* Estilo para los enlaces de la lista de navegación */
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #000; /* Establece el color del texto a negro */
+    font-weight: bold; /* Hace el texto en negrita */
+    transition: color 0.3s; /* Añade una transición suave para el cambio de color */
+}
+
+/* Efecto hover para los enlaces de navegación */
+nav ul li a:hover {
+    color: #ff1414c7; /* Cambia el color del texto a rojo fuerte cuando se pasa el cursor por encima */
+}
+
+/* Estilo para el icono del menú de hamburguesa */
+.burger {
+    display: none; /* Oculta el icono del menú de hamburguesa por defecto */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clicable */
+    flex-direction: column; /* Alinea los elementos internos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos internos */
+    height: 21px; /* Establece la altura total del icono */
+}
+
+/* Estilo para las líneas del icono del menú de hamburguesa */
+.burger div {
+    width: 25px; /* Establece el ancho de las líneas */
+    height: 3px; /* Establece la altura de las líneas */
+    background-color: #000; /* Establece el color de fondo de las líneas */
+}
+
+/* Estilo para el contenido principal */
+main {
+    text-align: center; /* Centra el texto */
+    padding: 50px 20px; /* Añade un relleno interno de 50px arriba/abajo y 20px a los lados */
+}
+
+/* Estilo para la imagen principal y su contenedor */
+.main-image {
+    position: relative; /* Permite posicionar elementos hijos de manera absoluta dentro de este contenedor */
+    display: inline-block; /* Hace que el contenedor sea inline-block */
+    margin-top: 20px; /* Añade un margen superior de 20px */
+}
+
+/* Estilo para la imagen dentro del contenedor principal */
+.main-image img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+    max-width: 800px; /* Establece un ancho máximo de 600px */
+    height: auto; /* Mantiene la proporción de la imagen */
+    
+}
+
+/* Estilos para pantallas pequeñas (menos de 768px de ancho) */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none; /* Oculta la lista de navegación */
+        flex-direction: column; /* Alinea los elementos de la lista verticalmente */
+        width: 100%; /* Hace que la lista ocupe el 100% del ancho del contenedor */
+        text-align: center; /* Centra el texto de los elementos de la lista */
+        background-color: #fff; /* Establece el color de fondo blanco */
+    }
+    
+    nav ul.nav-active {
+        display: flex; /* Muestra la lista de navegación cuando se activa */
+    }
+
+    .burger {
+        display: flex; /* Muestra el icono del menú de hamburguesa */
+    }
+}
