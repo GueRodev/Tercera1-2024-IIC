@@ -86,7 +86,76 @@ main {
     width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor */
     max-width: 800px; /* Establece un ancho máximo de 600px */
     height: auto; /* Mantiene la proporción de la imagen */
-    
+}
+
+/* Estilo para el contenedor de las tarjetas */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Estilo para cada tarjeta */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    min-height: 500px; /* Establece una altura mínima */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos de la tarjeta */
+    padding: 10px; /* Añade relleno interno a las tarjetas */
+    transition: transform 0.3s ease;
+}
+
+/* Estilo para los enlaces dentro de las tarjetas */
+.card a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Hereda el color del texto */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo para el texto de la descripción dentro de las tarjetas */
+.card p {
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Estilo para los botones dentro de las tarjetas */
+.card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    align-self: center; /* Centra el botón horizontalmente */
+}
+
+/* Efecto hover para los botones */
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Efecto hover para las tarjetas */
+.card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta al pasar el cursor */
 }
 
 /* Estilos para pantallas pequeñas (menos de 768px de ancho) */
@@ -106,4 +175,43 @@ main {
     .burger {
         display: flex; /* Muestra el icono del menú de hamburguesa */
     }
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
